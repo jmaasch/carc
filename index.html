@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Compositional Causal Reasoning Evaluation in Language Models">
+  <meta property="og:title" content="Compositional Causal Reasoning Evaluation in Language Models"/>
+  <meta property="og:description" content="Compositional Causal Reasoning Evaluation in Language Models"/>
+  <meta property="og:url" content="https://jmaasch.github.io/ccr/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/pch.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600
+  <meta name="twitter:title" content="Compositional Causal Reasoning Evaluation in Language Models">
+  <meta name="twitter:description" content="Compositional Causal Reasoning Evaluation in Language Models">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+-->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="causal reasoning, compositional reasoning, reasoning evaluation, large language models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Compositional Causal Reasoning Evaluation in Language Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/brain.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script type="text/javascript"
+  src="https://www.maths.nottingham.ac.uk/plp/pmadw/LaTeXMathML.js">
+  </script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Compositional Causal Reasoning Evaluation in Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://jmaasch.github.io/" target="_blank">Jacqueline R. M. A. Maasch</a><sup>1</sup>,
+              </span>
+                <span class="author-block">
+                  <a href="https://alihanhyk.github.io/" target="_blank">Alihan Hüyük</a><sup>2</sup>,
+                </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.co.uk/citations?user=osgiI-AAAAAJ&hl=en" target="_blank">Xinnuo Xu</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.microsoft.com/en-us/research/people/adityan/?from=https://research.microsoft.com/~adityan&type=exact" target="_blank">Aditya V. Nori</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://javiergonzalezh.github.io/" target="_blank">Javier Gonzalez</a><sup>3</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Cornell Tech, <sup>2</sup>Harvard University, <sup>3</sup>Microsoft Research Cambridge
+                    <br>ICML 2025</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                  </span>
+
+
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                  </span>
+
+
+                  <!-- Slides PDF link -->
+                  <span class="link-block">
+                    <a href="https://jmaasch.github.io/data/ccr_slides.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Slides</span>
+                  </a>
+                  </span>
+
+                  <!-- Poster PDF link -->
+                  <span class="link-block">
+                    <a href="https://jmaasch.github.io/data/ccr_icml_poster.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/jmaasch/compositional_causal_reasoning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                  </span>
+
+                  <!-- Hugging Face Paper link -->
+                    <span class="link-block">
+                    <a href="https://huggingface.co/papers/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      &#129303;
+                    </span>
+                    <span>HF Paper</span>
+                  </a>
+                  </span>
+
+                  <!-- Hugging Face Dataset -->
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      &#129303;
+                    </span>
+                    <span>HF Dataset</span>
+                  </a>
+                  </span>
+
+
+                    <!-- Supplementary PDF link 
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+                  -->
+
+                  
+                
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section>
+-->
+<!-- End teaser video -->
+ 
+
+<!-- Paper abstract -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3"><ccr>CCR</ccr>.<gb>GB</gb>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2> -->
+        <div class="content has-text-justified">
+          <p>
+            Causal reasoning and compositional reasoning are 
+            two core aspirations in AI. Measuring 
+            these behaviors requires principled 
+            evaluation methods. <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> 
+            consider both behaviors simultaneously, under the umbrella 
+            of <b>compositional causal reasoning (CCR)</b>: 
+            the ability to infer how causal measures compose 
+            and, equivalently, how causal quantities propagate 
+            through graphs. To facilitate community benchmarking, we introduce <b>CCR.GB</b>: A <b>G</b>enerative <b>B</b>enchmark for <b>C</b>ompositional <b>C</b>ausal <b>R</b>easoning Evaluation. 
+            CCR.GB enables reasoning evaluation at <b>all 
+            three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual.
+          </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/pch.png' width="70%" class="center">
+            <br>
+            <small>Pearl's Causal Hierarchy: observing factual realities, exerting actions to 
+              induce interventional realities, and imagining alternate counterfactual realities 
+              [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=hJAJZQLNGbEAAAAA:exuQk37fuXGMkpOVJEKACgnupjkP-adDQGhv2YzfBN9MfoERkAcHQRDgT3myWfccfqucQd8h63Q"
+               target="_blank">Bareinboim et al. 2022</a>]. Lower levels generally underdetermine higher levels. The counterfactual quantity $p(y'_{x'} \mid x,y)$ is known as the <i>probability of necessity</i>. 
+               CCR.GB uses a related counterfactual quantity, the <i>probability of necessity and sufficiency</i>, to evaluate AI reasoning 
+               [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>].
+                </small>
+          </p>
+          <br>
+          <p>
+            CCR.GB provides two artifacts:
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><hi>Random CCR task generator.</hi> Open source code for on-demand task generation according to user specifications (graphical complexity, task theme, etc.). 
+                Find our task generators on <a href="https://github.com/jmaasch/compositional_causal_reasoning" target="_blank">GitHub</a>. We currently offer four themes for random task 
+                generation: CandyParty, FluVaccine, FlowerGarden, and ClinicalNotes. The ClinicalNotes theme is currently our most complex prompt setup, and was designed in collaboration 
+                with a <a href="#thanks">clinician</a> to loosely resemble real-world history and physical (H&P) notes. </li>
+              <li><hi>Pre-sampled benchmark dataset.</hi> A static dataset sampled from the task generator, as a starting point for community benchmarking. 
+                Pre-sampled data can be found on <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning"
+                target="_blank">Hugging Face</a>. Currently, pre-sampled data are available for the ClinicalNotes and FluVaccine themes on simple causal graphs, 
+                but we encourage users to increase the graphical complexity of the tasks they randomly sample. 
+              </li>
+            </ul>
+            <b>Quick start.</b> See these <a href="https://github.com/jmaasch/compositional_causal_reasoning/tree/main/demos"
+            target="_blank">Jupyter Notebook demos</a> for a quick start on how to use our static dataset and task generators for evaluation, 
+            including recommended performance metrics. Additional helpful code can be found in our <a href="https://github.com/jmaasch/compositional_causal_reasoning"
+            target="_blank">GitHub repository</a>. 
+            <br><br>
+            <b>Note.</b> CCR.GB is still under development. Future iterations will consider additional causal estimands and more complex task setups. 
+            If you encounter any errors or problems with our code or data, please submit an issue on <a href="https://github.com/jmaasch/compositional_causal_reasoning">GitHub</a>.
+            <br><br>
+            <b>Key words.</b> <i>causal reasoning, compositional reasoning, graphical reasoning, clinical reasoning</i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="contents">Table of contents</h2>
+        <div class="content has-text-justified">
+          <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+            <li><a href="#comp_cause">Compositionality + causality</a></li>
+            <li><a href="#disentangle">Disentangling signal from noise in causal reasoning evaluation</a></li>
+            <li><a href="#task_gen">CCR task generation</a></li>
+            <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
+            <li><a href="#metrics">Performance metrics</a></li>
+            <li><a href="#taxonomy">Taxonomy of reasoners</a></li>
+            <!-- <li><a href="#complexity">How complex should the causal graph be?</a></li> -->
+            <li><a href="#results">Results</a></li>
+            <li><a href="#slides">Paper slides</a></li>
+            <li><a href="#bibtex">How to cite this work (BibTeX)</a></li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="comp_cause">Compositionality + causality</h2>
+        <div class="content has-text-justified">
+          <p>
+            We define CCR as the ability to correctly infer <b>(1)</b> how local causal measures
+            compose into global causal measures and <b>(2)</b> how global
+            causal measures decompose into local causal measures, in
+            both factual and counterfactual worlds. By extension, this requires reasoning over the propagation
+            of causal quantities through graphs. Thus, our framework also implicitly tests for graphical reasoning. 
+            <br><br>
+
+            To facilitate CCR evaluation, we introduce a framework for the exhaustive assessment of <b>compositional consistency</b>: correct inference that
+            equivalent compositions are indeed equal [<a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>]. We measure compositional 
+            consistency with respect to ground truth (<b>external validity</b>) and concordance among the LM's responses (<b>internal consistency</b>).
+            <br><br>
+
+            While explicitly combining compositional and causal reasoning evaluation in LMs is new, the intersection of compositionality 
+            and causality already enjoys a rich mathematical framework: the formalisms and methods of graphical modeling and causal 
+            inference. A classic example of compositionality in causal inference is the decomposition of the total effect in linear structural causal models (SCMs).
+            When causal functions are linear, the total causal effect decomposes as a sum of the natural direct effect and natural indirect effect. 
+            A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE:
+            <br><br>
+            
+            <p align="center">
+              <img src="static/images/te_decomp.png" alt="TE = NDE + NIE" width="30%" class="center"/>
+              <br>
+              <small>Example 1: Decomposition of the total effect in linear SCMs.</small>
+            </p>
+            <br>
+
+            In the current iteration of CCR.GB, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
+            sufficiency (PNS; <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>).
+            <br><br>
+
+            <p align="center">
+                <img src="https://jmaasch.github.io/ccr/static/images/pns.png" width="550">
+            </p>
+
+            As shown in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, the PNS composes multiplicatively over the biconnected components of the causal DAG when 
+            each cause-effect pair of interest satisfies the monotonicity constraint noted above.
+            <br><br>
+
+            <p align="center">
+                <img src="https://jmaasch.github.io/ccr/static/images/pns_comp.png" width="350">
+            </p>
+
+            We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $PNS_{AC}$) as well as their compositions. 
+            In the future, we aim to expand CCR.GB to incorporate additional compositional formulae for popular causal estimands. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="disentangle">Disentangling signal from noise <br /> in causal reasoning evaluation</h2>
+        <div class="content has-text-justified">
+          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as recall of previously seen information. CCR.GB is designed with this in mind.
+          <p>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><hi>A generative approach.</hi> The automated task generator allows users to randomly sample new CCR tasks, mitigating risks that the model has seen 
+                a specific problem instance during training. </li>
+              <li><hi>Reasoning vs training data recall.</hi> Fictitious causal world models help prevent the conflation of recall and reasoning. Variables 
+                have no real-world counterparts, ensuring that newly-sampled causal relations were never seen by the model during training.
+              </li>
+              <li><hi>Reasoning vs in-context recall.</hi> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of 
+                relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
+              </li>
+              <li><hi>Causal reasoning vs numeracy.</hi> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and 
+                not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, 
+                this might suggest that poor numeracy is one root of failure on quantitative CCR tasks. Currently, the ClinicalNotes and FlowerGarden themes 
+                offer qualitative prompts.
+              </li>
+            </ul>
+          </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/recall.png' width="50%" class="center"><br>
+            <small>Lower error rate seen on factual questions (recall) than counterfactual questions (reasoning) [<a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>].</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="task_gen">CCR task generation</h2>
+        <div class="content has-text-justified">
+          <p>
+            When generating a custom CCR task, the user can specify the task theme, the graphical complexity of the causal DAG (total nodes, total biconnected components, connectivity), 
+            the desired causal functions (all logical <i>or</i>, all logical <i>and</i>, or randomly assigned), and the number of extraneous variables in the prompt 
+            (i.e., those not needed to solve the task). Each task is constructed as follows.
+
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><hi>Causal world model.</hi> First, we define a fictional world corresponding to a randomly generated causal graph. 
+                This will be the causal world model for the LM to reason over. The structural causal model defining our fictitious world is 
+                comprised of binary exogenous noise variables, binary endogenous variables, and nonlinear causal functions (monotonic logical operators <i>and</i>, <i>or</i>).</li>
+              <li><hi>Causal context prompt.</hi> Second, we construct a verbal description of the world model. This verbal description — our 
+                “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task. 
+                The causal context centers on a user defined theme (e.g., ClinicalNotes, CandyParty, FlowerGarden, FluVaccine, etc.).</li>
+              <li><hi>Sampling.</hi> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. 
+                Sampled values are then used to construct the "sample context" in natural language, which is concatenated to our causal context prompt. Each causal context will be copied 
+                many times, where each copy is paired with a new sample context. 
+              <li><hi>Factual query prompts.</hi> Next, we construct factual queries by treating the causal context + sample context as observational data. 
+                All queries are phrased as yes/no questions. The factual query is then concatenated to a copy of the causal context + sample context. Responses to factual prompts
+                can be used to compute $p(y \mid x)$ for binary cause $x$ and binary effect $y$. Thus, evaluation on factual queries alone tests reasoning at the <b>associational level</b> 
+                of Pearl's Causal Hierarchy. </li>
+              <li><hi>Interventional query pairs.</hi> Finally, we construct paired interventional queries corresponding to interventions $do(X = True)$ and $do(X = False)$. 
+                Each interventional query is individually concatenated to a copy of the causal context + sample context. 
+                As with factual queries, all interventional queries are phrased as yes/no questions. Responses to interventional prompts are used to compute causal effects $p(y \mid do(X = True))$ 
+                and $p(y \mid do(X = False))$. As matched pairs over the exact same sample context (i.e., the same exogenous variable vector), these causal effects are also used to compute 
+                a counterfactual quantity: the PNS, $p(y_x,y'_{x'})$. In this setting, the PNS is equivalent to $p(y \mid do(X = True)) - p(y \mid do(X = False))$ (as $Y$ is monotonic in $X$). Thus, evaluation on 
+                interventional prompts tests for reasoning at both the <b>interventional and counterfactual rungs</b> of Pearl's Causal Hierarchy.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img style="vertical-align:middle" src='static/images/candy_prompt.png' class="center" alt="prompt" width="60%">
+          <h2 class="subtitle has-text-centered">
+           <small>A simple CandyParty task, which requires quantitative reasoning.</small>
+         </h2>
+       </div>
+       <div class="item">
+        <img style="vertical-align:middle" src='static/images/prompt.png' class="center" alt="prompt" width="60%">
+        <h2 class="subtitle has-text-centered">
+          <small>A simple ClinicalNotes task, which does not require quantitative reasoning.</small>
+        </h2>
+      </div>
+      <div class="item">
+        <img style="vertical-align:middle" src='static/images/flower_prompt.png' class="center" alt="prompt" width="60%">
+        <h2 class="subtitle has-text-centered">
+          <small>A simple FlowerGarden task, which does not require quantitative reasoning.</small>
+        </h2>
+      </div>
+      <div class="item">
+        <img style="vertical-align:middle" src='static/images/flu_prompt.png' class="center" alt="prompt" width="60%">
+        <h2 class="subtitle has-text-centered">
+          <small>A simple FluVaccine task, which requires quantitative reasoning.</small>
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="data_sim">LMs as counterfactual data simulators</h2>
+        <div class="content has-text-justified">
+          <p>
+            Instead of directly prompting the model to perform formal causal inference 
+            (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/631bb9434d718ea309af82566347d607-Paper-Conference.pdf" target="_blank">Jin et al. 2023</a>), 
+            CCR.GB treats LMs as <i>counterfactual data simulators</i> 
+            (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/d5a1f97d2b922da92e880d13b7d2bf02-Paper-Conference.pdf" 
+            target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
+            and the natural language responses are converted to their corresponding boolean value (e.g., using another LM as an extracter; see  
+            <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>). The 
+            resulting boolean vectors are treated as samples from observational and interventional distributions. These boolean vectors are then used to compute PNS estimates, or classic 
+            performance metrics such as F1 score, precision, and accuracy.
+          </p>
+          <br>
+          <p align="center" style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/data_sim.png' class="center" alt="data simulation schematic" width="90%">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="metrics">Performance metrics</h2>
+        <div class="content has-text-justified">
+          <p>
+            Responses generated using CCR.GB allow for reasoning evaluation at all three levels of Pearl's Causal Hierarchy.
+            <p>
+              <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+                <li><hi>Associational.</hi></li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> Classic metrics can be used to compare factual query response vectors to ground truth (e.g., F1, accuracy, precision, etc.). 
+                      This can also be considered a measure of logical reasoning, as causal functions are logical operators. </li>
+                  </ul>
+                <li><hi>Interventional.</hi></li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> Classic metrics like F1 score can also be used to compare interventional response vectors to ground truth.</li>
+                  </ul>
+                <li><hi>Counterfactual.</hi></li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> To assess counterfactual reasoning, we can estimate the PNS from the paired interventional response vectors 
+                      and compare these estimates to the ground truth PNS for each quantity of interest in our causal world model. 
+                      Approximation errors can be measured as the user desires, though we use the relative absolute error (RAE). We compute the RAE for the <b>external validity</b> 
+                      of PNS estimates:
+                      <br><br>
+                      <p align="center" style="text-align:center">
+                        <img style="vertical-align:middle" src='static/images/external_validity.png' class="center" alt="dag" width="80%">
+                      </p>
+                      <br>
+                      and for the <b>internal consistency</b> of PNS compositions: 
+                      <br><br>
+                      <p align="center" style="text-align:center">
+                        <img style="vertical-align:middle" src='static/images/internal_consistency.png' class="center" alt="dag" width="80%">
+                      </p>
+                    </li>
+                  </ul>
+              </ul>
+              <br>
+              <b>A note on sample size.</b> If evaluating an LM at the associational or interventional levels using classic metrics like F1 score, the user can choose to evaluate on any number of queries that
+              suits their needs. If evaluating at the counterfactual level to holistically assess the internal consistency and external validity of CCR over the full causal 
+              structure, a relatively large number of sample contexts must be represented. The appropriate sample size will vary by complexity of the causal structure. For example: for each causal quantity of 
+              interest, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> sampled 1k sets of exogenous variables and replicated 
+              each five times. Such relatively large sample sizes are needed to preserve the compositional properties of the PNS in the finite sample setting. Thus, CCR evaluation at the counterfactual level 
+              is more expensive than (non-compositional) interventional and associational reasoning evaluation.
+            </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="taxonomy">Taxonomy of reasoners</h2>
+        <div class="content has-text-justified">
+          <p>
+            Through the lens of <i>compositional consistency</i> – the ability to reason that theoretically equivalent compositions are indeed 
+            equal – this evaluation framework is able to reveal a range of taxonomically distinct error patterns. Arising from the notions of external 
+            validity and internal consistency described above, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>
+             introduce a four-category taxonomy for compositional reasoning errors: valid-consistent, valid-inconsistent, invalid-consistent, and invalid-inconsistent. This taxonomy can 
+            be used to categorize model performance on CCR.GB tasks, providing insights for further error analysis. 
+            See <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> for elaboration.
+          </p>
+          <p align="center" style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/taxonomy.png' class="center" alt="taxonomy of reasoners" width="60%">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+<!-- Procedure 
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="complexity">How complex should the causal graph be?</h2>
+        <div class="content has-text-justified">
+          <p>
+            As LMs become more capable, CCR.GB is more likely to be saturated. As shown in our <a href="#results">preliminary results</a> section and in 
+            <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>, Llama models up to version 3.1 perform poorly even on very simple 
+            CCR tasks, GPT-4o does poorly without CoT plus demonstration, and o1 does well. For further context, we provide results from more recent reasoning models 
+            on a simple FluVaccine task. While DeepSeek R1 outperformed o4-mini and GPT-4o overall, no model showed perfect interventional reasoning even on this 
+            simple structure.
+            <p align="center" style="text-align:center">
+              <img style="vertical-align:middle" src='static/images/flu_results.png' class="center" alt="flu vaccine results" width="80%">
+            </p>
+            These results can be used as a baseline for deciding what level of graphical complexity might be appropriate for your models of interest. If testing on 
+            state-of-the-art reasoning models, we recommend that users opt for moderately-to-significantly more complex causal DAGs than this example.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+-->
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="results">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            As proof of concept, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
+            On a simple math word problem, this framework revealed a range of taxonomically distinct error patterns. Additionally,
+            CCR errors increased with the complexity of causal paths for all models except o1. 
+            <br><br>
+
+            <p align="center" style="text-align:center">
+              <img style="vertical-align:middle" src='static/images/icml_task.png' class="center" alt="dag" width="35%">
+              <br>
+              <small>Causal DAG of the simple CandyParty task used in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>.</small>
+            </p>
+            <br>
+            
+            Preliminary error analyses revealed several failure modes:
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li>Failure to correctly extract causal relations.</li>
+              <li>Incorrect logic despite correct causal relation extraction.</li>
+              <li>Truncated reasoning processes.</li>
+              <li>Poor numeracy.</li>
+            </ul>
+
+            Results validate the utility and correct implementation of our framework, where success can be achieved by a sufficiently capable LM (e.g., o1 on the simple toy task). We recommend that users 
+            push the limits of the next wave of reasoning models by sampling increasingly complex causal DAGs from our task generator. 
+            <br><br>
+
+            See <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> for further discussions of preliminary results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/icml/relative_errors_long.png" alt="results" width="60%" class="center"/>
+          <h2 class="subtitle has-text-centered">
+           <small></small>
+         </h2>
+       </div>
+       <div class="item">
+        <img src="static/images/icml/errors_by_quantity.png" alt="results" width="70%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+          <small></small>
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsdy_counterfactual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsdy_factual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsxy_factual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="slides">Paper slides</h2>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Paper poster -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+
+      <p align="center">
+      <iframe  src="https://jmaasch.github.io/data/ccr_slides.pdf" width="60%" height="550"></iframe>
+      </p>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="thanks">Acknowledgments</h2>
+        <div class="content has-text-justified">
+          <p>
+            The authors thank Dr Samuel M. Roh DMD, MD for insightful feedback on the structure of our ClinicalNotes task, 
+            which is loosely based on the format of real-world H&P notes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" id="bibtex">How to cite this work</h2>
+      Please cite our work using the following BibTeX.<br><br>
+      <pre><code>
+      @inproceedings{maasch2025ccr,
+        title={Compositional Causal Reasoning Evaluation in Language Models},
+        author={Jacqueline Maasch and Alihan Hüyük and Xinnuo Xu and Aditya V. Nori and Javier Gonzalez},
+        booktitle={Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+        url={https://arxiv.org/abs/2503.04556},
+        year={2025}
+      }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
