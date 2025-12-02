@@ -217,12 +217,14 @@
           </p>
           <br>
           <p style="text-align:center">
-            <img style="vertical-align:middle" src='static/images/pch.png' width="40%" class="center">
+            <img style="vertical-align:middle" src='static/images/demo.png' width="100%" class="center">
             <br>
-            <small>Pearl Causal Hierarchy: observing factual realities (L1), exerting actions to 
-              induce interventional realities (L2), and imagining alternate counterfactual realities (L3) 
-              [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=hJAJZQLNGbEAAAAA:exuQk37fuXGMkpOVJEKACgnupjkP-adDQGhv2YzfBN9MfoERkAcHQRDgT3myWfccfqucQd8h63Q"
-               target="_blank">1</a>]. Lower levels generally underdetermine higher levels.
+            <small> The CausalARC testbed. <b>(A)</b> First, SCM <i>M</i> is manually transcribed in Python code. <b>(B)</b>
+              Input-output pairs are randomly sampled, providing observational (L1) learning signals about the
+              world model. <b>(C)</b> Sampling from interventional submodels <i>M</i>' of <i>M</i> yields interventional (L2)
+              samples (x', y'). Given pair (x, y), performing multiple interventions while holding the exogenous
+              context constant yields a set of counterfactual (L3) pairs. <b>(D)</b> Using L1 and L3 pairs as in-context
+              demonstrations, we can automatically generate natural language prompts for diverse reasoning tasks.
                 </small>
           </p>
           <br>
@@ -235,15 +237,20 @@
           </p>
           <br><br>
           <p style="text-align:center">
-            <img style="vertical-align:middle" src='static/images/demo.png' width="100%" class="center">
+            <img style="vertical-align:middle" src='static/images/pch_cfs.png' width="40%" class="center">
             <br>
-            <small> The CausalARC testbed. <b>(A)</b> First, SCM <i>M</i> is manually transcribed in Python code. <b>(B)</b>
-              Input-output pairs are randomly sampled, providing observational (L1) learning signals about the
-              world model. <b>(C)</b> Sampling from interventional submodels <i>M</i>' of <i>M</i> yields interventional (L2)
-              samples (x', y'). Given pair (x, y), performing multiple interventions while holding the exogenous
-              context constant yields a set of counterfactual (L3) pairs. <b>(D)</b> Using L1 and L3 pairs as in-context
-              demonstrations, we can automatically generate natural language prompts for diverse reasoning tasks.
-                </small>
+            <small><b>[Left] Pearl Causal Hierarchy:</b> observing factual realities (L1), exerting actions to 
+              induce interventional realities (L2), and imagining alternate counterfactual realities (L3) 
+              [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=hJAJZQLNGbEAAAAA:exuQk37fuXGMkpOVJEKACgnupjkP-adDQGhv2YzfBN9MfoERkAcHQRDgT3myWfccfqucQd8h63Q"
+               target="_blank">1</a>]. Lower levels generally underdetermine higher levels. <b>[Right] Jointly observed counterfactuals in CausalARC. </b> (A) The distribution over the exogenous context (i.e., the external state). (B) Transformations applied to the exogenous context. (C) Induced distributions, following from the applied transformation. (D) CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
+            </small>
+          </p>
+          <br>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/themes.png' width="100%" class="center">
+            <br>  
+            <small> As in <a href="https://github.com/victorvikram/ConceptARC" target="_blank">ConceptARC</a>, tasks are labeled by reasoning theme (logical, counting, extension, and ordering). As in <a href="https://arxiv.org/abs/2506.06941" target="_blank">Shojaee et al. (2025)</a>, CausalARC supports evaluation with respect to scaling problem complexity by configuring most tasks with tunable array sizes.
+            </small>
           </p>
         </div>
       </div>
