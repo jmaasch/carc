@@ -159,6 +159,8 @@
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">
+                      <br>
+                      <br>
                       <b>NeurIPS 2025 Workshop Spotlight Poster</b><br>
                       <b>Bridging Language, Agent, and World Models for Reasoning and Planning (LAW)</b>
                     </span>
@@ -215,12 +217,32 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">ARC Through a Causal Lens</h2> 
         <div class="content has-text-justified">
           <p>
-            <b>Abstract.</b> On-the-fly reasoning often requires adaptation to novel problems under limited data and distribution shift. This work introduces CausalARC: an experimental testbed for AI reasoning in low-data and out-of-distribution regimes, modeled after the Abstraction and Reasoning Corpus (ARC). Each CausalARC reasoning task is sampled from a fully specified <i>causal world model</i>, formally expressed as a structural causal model (SCM). Principled data augmentations provide observational, interventional,  and counterfactual feedback about the world model in the form of few-shot, in-context learning demonstrations. As a proof-of-concept, we illustrate the use of CausalARC for four language model evaluation settings: (1) abstract reasoning with test-time training, (2) counterfactual reasoning with in-context learning, (3) program synthesis, and (4) causal discovery with logical reasoning. Within- and between-model performance varied heavily across tasks, indicating room for significant improvement in language model reasoning.
+            <b>Abstract.</b> On-the-fly reasoning often requires adaptation to novel problems under limited data and distribution shift. This work introduces CausalARC: an experimental testbed for AI reasoning in low-data and out-of-distribution regimes, modeled after the <a href="https://arcprize.org/" target="_blank">Abstraction and Reasoning Corpus</a> (ARC). Each CausalARC reasoning task is sampled from a fully specified <i>causal world model</i>, formally expressed as a structural causal model (SCM). Principled data augmentations provide observational, interventional,  and counterfactual feedback about the world model in the form of few-shot, in-context learning demonstrations. As a proof-of-concept, we illustrate the use of CausalARC for four language model evaluation settings: (1) abstract reasoning with test-time training, (2) counterfactual reasoning with in-context learning, (3) program synthesis, and (4) causal discovery with logical reasoning. Within- and between-model performance varied heavily across tasks, indicating room for significant improvement in language model reasoning.
           </p>
-          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Paper abstract -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">ARC Through a Causal Lens</h2> 
+        <p>
+          This work extends and reconceptualizes the ARC setup to support causal reasoning evaluation under limited data and distribution shift. 
+          Given a fully specified SCM, all three levels of the Pearl Causal Hierarchy (PCH) are well-defined: any observational (L1), interventional 
+          (L2), or counterfactual (L3) query can be answered about the environment under study. This 
+          formulation makes CausalARC an open-ended playground for testing reasoning hypotheses at all 
+          three levels of the PCH, with an emphasis on abstract, logical, and counterfactual reasoning. 
+        </p>        
+        <div class="content has-text-justified">
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/demo.png' width="100%" class="center">
             <br>
@@ -239,6 +261,7 @@
 </div>
 </section>
 
+
 <!-- About -->
 <section class="hero">
   <div class="hero-body">
@@ -247,22 +270,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3" id="disentangle">SCMs: Causal World Models, Causal Programs</h2>
         <div class="content has-text-justified">
-          <p>
-            This work extends and reconceptualizes the ARC setup to support causal reasoning evaluation under limited data and distribution shift. 
-            Given a fully specified SCM, all three levels of the Pearl Causal Hierarchy (PCH) are well-defined: any observational (L1), interventional 
-            (L2), or counterfactual (L3) query can be answered about the environment under study [2]. This 
-            formulation makes CausalARC an open-ended playground for testing reasoning hypotheses at all 
-            three levels of the PCH, with an emphasis on abstract, logical, and counterfactual reasoning. 
-          </p>
-          <p>As in ARC, CausalARC features high task diversity: each task instance is sampled from a unique world model. In program synthesis approaches to ARC, world models are  specified as computer programs (e.g., a Python program) \citep{li2025combining}. The present work assumes a <i>causal world model</i> describing the data generating process, which we define in the formal language of SCMs. As the PCH is well-defined given a fully specified SCM, this offers an information-rich world model upon which we can perform symbolic operations. </p>
+          <p>As in ARC, CausalARC features high task diversity: each task instance is sampled from a unique world model. In program synthesis approaches to ARC, world models are  specified as computer programs (e.g., a Python program). The present work assumes a <i>causal world model</i> describing the data generating process, which we define in the formal language of SCMs (<a href="https://projecteuclid.org/journals/statistics-surveys/volume-3/issue-none/Causal-inference-in-statistics-An-overview/10.1214/09-SS057.pdf" target="_blank">Pearl 2009</a>). As the PCH is well-defined given a fully specified SCM, this offers an information-rich world model upon which we can perform symbolic operations. </p> 
           <br><br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/pch_cfs.png' width="100%" class="center">
             <br>
             <small><b>[Left] Pearl Causal Hierarchy:</b> observing factual realities (L1), exerting actions to 
               induce interventional realities (L2), and imagining alternate counterfactual realities (L3) 
-              [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=hJAJZQLNGbEAAAAA:exuQk37fuXGMkpOVJEKACgnupjkP-adDQGhv2YzfBN9MfoERkAcHQRDgT3myWfccfqucQd8h63Q"
-               target="_blank">1</a>]. Lower levels generally underdetermine higher levels. <b>[Right] Jointly observed counterfactuals in CausalARC. </b> (A) The distribution over the exogenous context (i.e., the external state). (B) Transformations applied to the exogenous context. (C) Induced distributions, following from the applied transformation. (D) CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
+              (<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>). Lower levels generally underdetermine higher levels. <b>[Right] Jointly observed counterfactuals in CausalARC. </b> (A) The distribution over the exogenous context (i.e., the external state). (B) Transformations applied to the exogenous context. (C) Induced distributions, following from the applied transformation. (D) CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
             </small>
           </p>
           <p style="text-align:center">
