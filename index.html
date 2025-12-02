@@ -280,22 +280,26 @@
         <h2 class="title is-3" id="disentangle">SCMs: Causal World Models, Causal Programs</h2>
         <div class="content has-text-justified">
           <p>As in ARC, CausalARC features high task diversity: each task instance is sampled from a unique world model. In program synthesis approaches to ARC, world models are  specified as computer programs (e.g., a Python program). The present work assumes a <i>causal world model</i> describing the data generating process, which we define in the formal language of SCMs (<a href="https://projecteuclid.org/journals/statistics-surveys/volume-3/issue-none/Causal-inference-in-statistics-An-overview/10.1214/09-SS057.pdf" target="_blank">Pearl 2009</a>). As the PCH is well-defined given a fully specified SCM, this offers an information-rich world model upon which we can perform symbolic operations. </p> 
+          <br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/themes.png' width="100%" class="center">
-            <br><br>
+          </p>
+          <p>
             CausalARC is designed for hypothesis-driven model evaluations and detailed error analyses As in <a href="https://github.com/victorvikram/ConceptARC" target="_blank">ConceptARC</a>, tasks are labeled by reasoning theme (logical, counting, extension, and ordering). As in <a href="https://arxiv.org/abs/2506.06941" target="_blank">Shojaee et al. (2025)</a>, CausalARC supports evaluation with respect to scaling problem complexity by configuring most tasks with tunable array sizes.
           </p>
           <br><br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/counterfactuals.png' width="80%" class="center">
             <br>
-            <small><b>Jointly observed counterfactuals in CausalARC.</b> (A) The distribution over the exogenous context (i.e., the external state). (B) Transformations applied to the exogenous context. (C) Induced distributions, following from the applied transformation. (D) CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
+            <small><b>Jointly observed counterfactuals in CausalARC.</b> <b>(A)</b> The distribution over the exogenous context (i.e., the external state). <b>(B)</b> Transformations applied to the exogenous context. <b>(C)</b> Induced distributions, following from the applied transformation. <b>(D)</b> CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
             </small>
           </p>
           <br><br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/scm.png' width="70%" class="center">
+            <br>
             <img style="vertical-align:middle" src='static/images/example.png' width="100%" class="center">
+            <br>
             <small><b>A fully recovered SCM.</b> The SCM (top), causal graph, and samples recovered from ARC-AGI-1 task 31d5ba1a, an inspiration point for the CausalARC testbed. In CausalARC, every task is associated with a fully specified SCM. </small>
           </p>
         </div>
