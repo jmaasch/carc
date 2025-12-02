@@ -72,8 +72,6 @@
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>Cornell Tech, New York, NY &nbsp;&nbsp;&nbsp; <sup>2</sup>YRIKKA, New York, NY
-                    <br><b>NeurIPS 2025 Workshop Spotlight Poster</b><br>
-                    <b>Bridging Language, Agent, and World Models for Reasoning and Planning (LAW)</b>
                     </span>
                   </div>
 
@@ -159,6 +157,13 @@
                   </a>
                   </span>
 
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <b>NeurIPS 2025 Workshop Spotlight Poster</b><br>
+                      <b>Bridging Language, Agent, and World Models for Reasoning and Planning (LAW)</b>
+                    </span>
+                  </div>
+
                   
 
 
@@ -210,16 +215,16 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <!-- <h2 class="title is-3"><ccr>CCR</ccr>.<gb>GB</gb>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2> -->
+        <h2 class="title is-3">ARC Through a Causal Lens</h2> 
         <div class="content has-text-justified">
           <p>
-            <b>Abstract.</b> On-the-fly reasoning often requires adaptation to novel problems under limited data and distribution shift. This work introduces CausalARC: an experimental testbed for AI reasoning in low-data and out-of-distribution regimes, modeled after the Abstraction and Reasoning Corpus (ARC). Each CausalARC reasoning task is sampled from a fully specified <i>causal world model</i>, formally expressed as a structural causal model. Principled data augmentations provide observational, interventional,  and counterfactual feedback about the world model in the form of few-shot, in-context learning demonstrations. As a proof-of-concept, we illustrate the use of CausalARC for four language model evaluation settings: (1) abstract reasoning with test-time training, (2) counterfactual reasoning with in-context learning, (3) program synthesis, and (4) causal discovery with logical reasoning. Within- and between-model performance varied heavily across tasks, indicating room for significant improvement in language model reasoning.
+            <b>Abstract.</b> On-the-fly reasoning often requires adaptation to novel problems under limited data and distribution shift. This work introduces CausalARC: an experimental testbed for AI reasoning in low-data and out-of-distribution regimes, modeled after the Abstraction and Reasoning Corpus (ARC). Each CausalARC reasoning task is sampled from a fully specified <i>causal world model</i>, formally expressed as a structural causal model (SCM). Principled data augmentations provide observational, interventional,  and counterfactual feedback about the world model in the form of few-shot, in-context learning demonstrations. As a proof-of-concept, we illustrate the use of CausalARC for four language model evaluation settings: (1) abstract reasoning with test-time training, (2) counterfactual reasoning with in-context learning, (3) program synthesis, and (4) causal discovery with logical reasoning. Within- and between-model performance varied heavily across tasks, indicating room for significant improvement in language model reasoning.
           </p>
           <br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/demo.png' width="100%" class="center">
             <br>
-            <small> The CausalARC testbed. <b>(A)</b> First, SCM <i>M</i> is manually transcribed in Python code. <b>(B)</b>
+            <small> <b>The CausalARC testbed.</b> <b>(A)</b> First, SCM <i>M</i> is manually transcribed in Python code. <b>(B)</b>
               Input-output pairs are randomly sampled, providing observational (L1) learning signals about the
               world model. <b>(C)</b> Sampling from interventional submodels <i>M</i>' of <i>M</i> yields interventional (L2)
               samples (x', y'). Given pair (x, y), performing multiple interventions while holding the exogenous
@@ -227,7 +232,21 @@
               demonstrations, we can automatically generate natural language prompts for diverse reasoning tasks.
                 </small>
           </p>
-          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- About -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="disentangle">SCMs: Causal World Models, Causal Programs</h2>
+        <div class="content has-text-justified">
           <p>
             This work extends and reconceptualizes the ARC setup to support causal reasoning evaluation under limited data and distribution shift. 
             Given a fully specified SCM, all three levels of the Pearl Causal Hierarchy (PCH) are well-defined: any observational (L1), interventional 
@@ -235,6 +254,7 @@
             formulation makes CausalARC an open-ended playground for testing reasoning hypotheses at all 
             three levels of the PCH, with an emphasis on abstract, logical, and counterfactual reasoning. 
           </p>
+          <p>As in ARC, CausalARC features high task diversity: each task instance is sampled from a unique world model. In program synthesis approaches to ARC, world models are  specified as computer programs (e.g., a Python program) \citep{li2025combining}. The present work assumes a <i>causal world model</i> describing the data generating process, which we define in the formal language of SCMs. As the PCH is well-defined given a fully specified SCM, this offers an information-rich world model upon which we can perform symbolic operations. </p>
           <br><br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/pch_cfs.png' width="40%" class="center">
@@ -245,19 +265,23 @@
                target="_blank">1</a>]. Lower levels generally underdetermine higher levels. <b>[Right] Jointly observed counterfactuals in CausalARC. </b> (A) The distribution over the exogenous context (i.e., the external state). (B) Transformations applied to the exogenous context. (C) Induced distributions, following from the applied transformation. (D) CausalARC samples from each rung of the PCH. Adapted from <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501743?casa_token=69MZcXhXMtwAAAAA:AZACFkoSxYznYsZ3wt0jtOG5Kc8fx_B81xQc8ze4FBgcQY6u_wWPE42e4u2t91M7kt4-pRsFJJvgZQ" target="_blank">Bareinboim et al. (2022)</a>. 
             </small>
           </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/example.png' width="100%" class="center">
+            <small>The SCM and causal graph recovered from ARC-AGI-1 task 31d5ba1a, an inspiration point for the CausalARC testbed.</small>
+          </p>
+
           <br>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/themes.png' width="100%" class="center">
-            <br>  
-            <small> As in <a href="https://github.com/victorvikram/ConceptARC" target="_blank">ConceptARC</a>, tasks are labeled by reasoning theme (logical, counting, extension, and ordering). As in <a href="https://arxiv.org/abs/2506.06941" target="_blank">Shojaee et al. (2025)</a>, CausalARC supports evaluation with respect to scaling problem complexity by configuring most tasks with tunable array sizes.
-            </small>
           </p>
+          As in <a href="https://github.com/victorvikram/ConceptARC" target="_blank">ConceptARC</a>, tasks are labeled by reasoning theme (logical, counting, extension, and ordering). As in <a href="https://arxiv.org/abs/2506.06941" target="_blank">Shojaee et al. (2025)</a>, CausalARC supports evaluation with respect to scaling problem complexity by configuring most tasks with tunable array sizes.
         </div>
       </div>
     </div>
   </div>
 </div>
 </section>
+
 
 <!-- Paper poster -->
 <section class="hero">
@@ -280,11 +304,11 @@
       <h2 class="title" id="bibtex">How to cite this work</h2>
       Please cite our work using the following BibTeX.<br><br>
       <pre><code>
-        @inproceedings{maasch2025causalarc,
-          title={CausalARC: Abstract Reasoning with Causal World Models},
-          author={Maasch, Jacqueline and Kalantari, John and Khezeli, Kia},
-          booktitle={NeurIPS 2025 Workshop on Bridging Language, Agent, and World Models for Reasoning and Planning}
-        }
+      @inproceedings{maasch2025causalarc,
+        title={CausalARC: Abstract Reasoning with Causal World Models},
+        author={Maasch, Jacqueline and Kalantari, John and Khezeli, Kia},
+        booktitle={NeurIPS 2025 Workshop on Bridging Language, Agent, and World Models for Reasoning and Planning}
+      }
       </code></pre>
     </div>
 </section>
